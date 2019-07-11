@@ -1,0 +1,27 @@
+node
+{
+try{
+
+checkout scm;
+props = readProperties file: 'propertyfolder/properties.txt'
+stage('preparation')
+{
+
+deleteDir()
+sh props.UTIL_REPO_URL
+ciCdUtility=load props.JAVA_CI_CD_GROOVY_URL
+echo "${ciCdUtility}"
+commonUtility=load props.COMMON_GROOVY_URL
+print 'Checkout Pipeline Success'
+ciCdUtility.function(props);
+
+echo "${commonUtility}"					
+}
+}
+catch(err)
+{
+commonUtility.failureEmail(err);
+echo "${err}"
+print 'CAME TO CATCH BLOCKKKK'
+}
+}

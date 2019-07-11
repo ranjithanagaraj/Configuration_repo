@@ -1,0 +1,21 @@
+UTIL_REPO_URL= git clone https://github.com/MeghanaNettem2/util_repo.git
+JAVA_CI_CD_GROOVY_URL=util_repo/java/java-ci-cd.groovy
+COMMON_GROOVY_URL=util_repo/common/common.groovy
+
+POM_FILE=pom.xml
+JAVA_APP_REPO_GIT_URL=https://github.com/MeghanaNettem2/App_repo.git
+
+
+SONAR_SCAN=mvn sonar:sonar -Dsonar.host.url=
+SONAR_HOST=http://my40867dns.eastus2.cloudapp.azure.com
+MAVEN_BUILD=mvn clean install
+
+TOMCAT_DEPLOY= docker cp target/*.war
+TOMCAT_LOCATION=tom:/usr/local/tomcat/webapps/
+
+ARTIFACTORY_ID=http://my16083dns.eastus2.cloudapp.azure.com:8081/artifactory
+
+RECEPIENT_MAIL_ID = Meghana.Nettem2@mindtree.com
+
+DOCKER_CMD = docker run -d --name tom -p 9001:8080 tomcat
+DOCKER_TOMCAT_STOP=docker stop $(docker ps -a -q --filter ancestor=tomcat)
