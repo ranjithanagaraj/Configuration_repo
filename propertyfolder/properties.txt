@@ -1,21 +1,15 @@
-UTIL_REPO_URL= git clone https://github.com/MeghanaNettem2/util_repo.git
+UTIL_REPO_URL= git clone https://github.com/ranjithanagaraj/Util_repo.git
 JAVA_CI_CD_GROOVY_URL=util_repo/java/java-ci-cd.groovy
 COMMON_GROOVY_URL=util_repo/common/common.groovy
 
 POM_FILE=pom.xml
-JAVA_APP_REPO_GIT_URL=https://github.com/MeghanaNettem2/App_repo.git
+JAVA_APP_REPO_GIT_URL=https://github.com/ranjithanagaraj/Project-1.git
 
 
-SONAR_SCAN=mvn sonar:sonar -Dsonar.host.url=
-SONAR_HOST=http://my40867dns.eastus2.cloudapp.azure.com
+SONAR_SCAN=mvn sonar:sonar 
 MAVEN_BUILD=mvn clean install
 
-TOMCAT_DEPLOY= docker cp target/*.war
-TOMCAT_LOCATION=tom:/usr/local/tomcat/webapps/
+RECEPIENT_MAIL_ID = ranjithatharani@gmail.com
 
-ARTIFACTORY_ID=http://my16083dns.eastus2.cloudapp.azure.com:8081/artifactory
-
-RECEPIENT_MAIL_ID = Meghana.Nettem2@mindtree.com
-
-DOCKER_CMD = docker run -d --name tom -p 9001:8080 tomcat
-DOCKER_TOMCAT_STOP=docker stop $(docker ps -a -q --filter ancestor=tomcat)
+DOCKER_CMD=docker run --name redis -d redis
+DOCKER_RUN=docker run -p 8086:8086 --link redis -d ranjithanagaraj/spring-redis-image
