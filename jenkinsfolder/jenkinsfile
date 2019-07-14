@@ -3,7 +3,7 @@ node
 try{
 
 checkout scm;
-def props = readProperties file: 'propertyfolder/application.properties'
+props = readProperties file: 'propertyfolder/application.properties'
 stage('preparation')
 {
 
