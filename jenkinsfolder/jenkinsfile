@@ -9,15 +9,13 @@ stage('preparation')
 {
 
 sh props.UTIL_REPO_URL
-
 ciCdUtility=load props.JAVA_CI_CD_GROOVY_URL
 echo "${ciCdUtility}"
-
 commonUtility=load props.COMMON_GROOVY_URL
-echo "${commonUtility}"		
-
+print 'Checkout Pipeline Success'
 ciCdUtility.function(props);
 
+echo "${commonUtility}"	
 }
 }
 catch(err)
