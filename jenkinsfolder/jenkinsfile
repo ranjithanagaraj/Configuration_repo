@@ -7,7 +7,7 @@ props = readProperties file: 'propertyfolder/application.properties'
 
 stage('preparation')
 {
-
+deleteDir()
 sh props.UTIL_REPO_URL
 ciCdUtility=load props.JAVA_CI_CD_GROOVY_URL
 echo "${ciCdUtility}"
